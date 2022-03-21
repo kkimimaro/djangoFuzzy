@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <link rel="SHORTCUT ICON" href="{% static 'images/icon.png' %}" >
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        html {
+            background-color: #3f7ca8;
+        }
+
+        body {
+            font-family: 'Righteous', sans-serif;
+        }
+
+        h1{
+            font-family: 'Righteous', sans-serif;
+            color: #367199;
+            font-weight: normal;
+            line-height: 1;
+            text-align: left;
+            margin: 0;
+            display: inline-flex;
+        }
+
+        p {
+            font-family: 'Righteous', sans-serif;
+            position: relative;
+            color: #174869;
+            font-size: 26px;
+            font-weight: normal;
+            display: inline-block;
+            margin: 0;
+            line-height: 1;
+        }
+
+        td {
+            font-family: 'Righteous', sans-serif;
+            position: relative;
+            color: #1f445d;
+            font-size: 20px;
+            font-weight: normal;
+            display: inline-block;
+            margin: 0;
+            line-height: 1;
+        }
+
+        h3 {
+            font-family: 'Righteous', sans-serif;
+            position: relative;
+            color: #367199;
+            font-size: 24px;
+            font-weight: normal;
+            display: inline-block;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #formContent {
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            background: #fff;
+            padding: 30px;
+            width: 90%;
+            position: relative;
+            -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+            box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        #formMirror {
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            background: rgba(54, 113, 153, 0.3);
+            padding: 30px;
+            margin-top: 20px;
+            width: 90%;
+            position: relative;
+            -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+            box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        input[type=button], input[type=submit], input[type=reset]  {
+            background-color: #ffffff;
+            border: none;
+            color: rgb(54, 113, 153);
+            padding: 15px 32px;
+            text-align: center;
+            font-family: 'Righteous', sans-serif;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 20px;
+            -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+            box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border-radius: 5px 5px 5px 5px;
+            margin: 15px;
+            width: 25.75%;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+            background-color: #cfdfea;
+        }
+
+        input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+            -moz-transform: scale(0.95);
+            -webkit-transform: scale(0.95);
+            -o-transform: scale(0.95);
+            -ms-transform: scale(0.95);
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h1 style="margin: 10px">Результаты поиска</h1>
+
+        {% for anime in results %}
+
+            <div id="formMirror">
+                <h3 style="float: left; margin: 10px">{{anime.title}}</h3>
+                <h3 style="float: right; margin: 10px">Подходит на <p>{{anime.matchrate}}%</p></h3>
+                <img src="{% static anime.img_src %}" width="300px" class="" alt="..." style="float: right; margin-right: 22.5rem; max-height: 170px">
+                <br>
+                <table style="text-align: left; margin-top: 40px" cellpadding="15px">
+                    <tr>
+                      <td>Год выпуска:</td>
+                      <td>{{anime.year}}</td>
+                    </tr>
+                    <tr>
+                      <td>Жанр:</td>
+                      <td style="width: 400px">{{anime.genre}}</td>
+                    </tr>
+                </table>
+            </div>
+
+          {% endfor %}
+
+    </div>
+        <input style="cursor: pointer" type="button" onClick='location.href="/"' value="Главная">
+</div>
+
+</body>
+</html>

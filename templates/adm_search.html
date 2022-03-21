@@ -1,0 +1,23 @@
+<html>
+<title>Admin Rules</title>
+<head>
+    {% load static %}
+    <link rel="SHORTCUT ICON" href="{% static 'images/icon.png' %}" >
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+</head>
+<body>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+            <h1 style="text-align: center">Правила</h1>
+        {% for rule in results %}
+            <h4>{{rule.consequentId}} : {{rule.age}}{{rule.operator}}{{rule.length}} : {{rule.rate}}</h4>
+            <br>
+          {% endfor %}
+        <input style="margin-top: 20px; cursor: pointer" type="button" onClick='location.href="/admin"' value="Назад">
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+<title>Admin Add</title>
+<head>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="SHORTCUT ICON" href="{% static 'images/icon.png' %}" >
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/stylesAdd.css' %}" type="text/css">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h2 style="margin: 20px">Добавить аниме</h2>
+            <div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" required name="title" placeholder="Введите название..." />
+                    <input type="text" required name="year" placeholder="Год выпуска...">
+                    <input type="text" required name="genre" placeholder="Жанр...">
+                    <input type="text" required name="image" placeholder="URL изображения...">
+                    <br>
+
+                <div id="formAdd">
+                    <div id="selectorSquad">
+                        <select class="form-select w-auto" name="age">
+                          <option selected>Выберите возраст</option>
+                          <option value="baby">baby</option>
+                          <option value="child">child</option>
+                          <option value="preteen">preteen</option>
+                          <option value="adult1">adult1</option>
+                          <option value="adult2">adult2</option>
+                          <option value="old">old</option>
+                        </select>
+
+                        <select class="form-select w-auto" name="operator">
+                          <option selected>Выберите оператор</option>
+                          <option value="&">&</option>
+                          <option value="|">|</option>
+                        </select>
+
+                        <select class="form-select w-auto" name="length">
+                          <option selected>Выберите длину</option>
+                          <option value="short">short</option>
+                          <option value="medium">medium</option>
+                          <option value="long">long</option>
+                          <option value="multylong">multylong</option>
+                        </select>
+
+                        <select class="form-select w-auto" name="rate">
+                            <option selected>Выберите совпадение</option>
+                            <option value="anything">anything</option>
+                            <option value="belowaverage">belowaverage</option>
+                            <option value="medium">medium</option>
+                            <option value="good">good</option>
+                            <option value="amazing">amazing</option>
+                        </select>
+                        <br>
+                    </div>
+                </div>
+
+                    <i onclick="duplicate()" class="fa fa-plus-square fa-2x" style="color: #605446; cursor: pointer" aria-hidden="true"></i>
+
+                    <input type="hidden" id="amount" name="amount" value="1">
+                    <input style="cursor: pointer" type="submit" value="Добавить аниме">
+                    <input style="cursor: pointer" type="reset" value="Отмена">
+                    <br>
+                    <input style="margin-top: 20px; cursor: pointer" type="button" onClick='location.href="/admin"' value="Назад">
+                </form>
+                </div>
+            </div>
+    </div>
+</div>
+
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

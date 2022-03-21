@@ -1,0 +1,179 @@
+body {
+    background-color: #c9ad86;
+    font-family: 'Righteous', sans-serif;
+}
+
+.four {
+    background: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h4{
+    font-family: 'Righteous', sans-serif;
+    color: #2d2b29;
+    font-weight: normal;
+    line-height: 1;
+    text-align: left;
+    margin: 0;
+    display: inline-flex;
+}
+
+h3{
+    font-family: 'Righteous', cursive;
+    color: #c9ad86;
+    font-weight: normal;
+    margin: 0;
+    line-height: 1;
+    text-align: left;
+    display: inline-flex;
+}
+
+h2{
+    font-family: 'Righteous', sans-serif;
+    color: #c9ad86;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0;
+    line-height: 1;
+}
+
+.four h1 {
+    font-family: 'Righteous', sans-serif;
+    position: relative;
+    color: #c9ad86;
+    font-size: 36px;
+    font-weight: normal;
+    padding: 8px 20px 7px 20px;
+    border-top: 4px solid;
+    border-left: 4px solid;
+    display: inline-block;
+    margin: 0;
+    line-height: 1;
+}
+
+.four h1:before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: -28px;
+    left: -28px;
+    border: 4px solid #c9ad86;
+    box-sizing: border-box;
+}
+
+@media (max-width: 450px) {
+    .four h1 {
+        font-size: 36px;
+    }
+
+    .four h1:before {
+        width: 20px;
+        height: 20px;
+        top: -20px;
+        left: -20px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+#formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 68%;
+    position: relative;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+#formMirror {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: rgba(201, 173, 134, 0.4);
+    padding: 30px;
+    margin-top: 20px;
+    width: 67%;
+    display: block;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+input[type=button], input[type=submit], input[type=reset]  {
+    background-color: #c9ad86;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-family: 'Righteous', sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px;
+    width: 25.75%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+    color: #3e3a37;
+    background-color: #DEB887;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+    color: rgb(51,51,51);
+
+}
+
+input[type=text], input[type=password] {
+    background-color: #f6f6f6;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    font-family: 'Righteous', sans-serif;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 81.5%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+}
+
+input[type=text]::placeholder, input[type=password]::placeholder {
+    color: #cccccc;
+}
