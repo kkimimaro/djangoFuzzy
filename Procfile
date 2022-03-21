@@ -1,1 +1,1 @@
-web: gunicorn djangoFuzzievich.wsgi
+web: python manage.py runserver
